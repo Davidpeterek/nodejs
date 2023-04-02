@@ -1,0 +1,32 @@
+doctype html 
+html 
+    head 
+        title Fotbalové zápasy
+        link(rel='stylesheet' href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css') 
+    body 
+        header.jumbotron-fluid.bg-success.p-3 
+            h1.text-center.text-white #{nadpis} 
+        main.container 
+            table(class="table table-striped") 
+                thead 
+                    tr.bg-dark.text-light 
+                        th Tým 1
+                        th Tým 2
+                        th Kategorie 
+                        th Datum odehrání
+                        th Čas odehrání
+                tbody 
+                    each zapas in zapasy 
+                        tr 
+                            td #{zapas.tym1}
+                            td #{zapas.tym2}
+                            td #{zapas.kategorie} 
+                            td #{zapas.odehrani} 
+                            td #{zapas.cas} 
+        footer.bg-dark.p-2 
+            div.container.text-white 
+                p.float-right 
+                    a(href="/") Zpět na formulář 
+                p &copy; 2023 - IT2 - NodeJS 
+        script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js') 
+        script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')
